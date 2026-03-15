@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Predictor</title>
+</head>
+
+<body>
+
+<h2>Enter Features</h2>
+
+<form action="/predict" method="post">
+
+    <input name="f0" placeholder="Feature 1"><br>
+    <input name="f1" placeholder="Feature 2"><br>
+    <input name="f2" placeholder="Feature 3"><br>
+    <input name="f3" placeholder="Feature 4"><br>
+    <input name="f4" placeholder="Feature 5"><br>
+    <input name="f5" placeholder="Feature 6"><br>
+    <input name="f6" placeholder="Feature 7"><br>
+    <input name="f7" placeholder="Feature 8"><br>
+    <input name="f8" placeholder="Feature 9"><br>
+    <input name="f9" placeholder="Feature 10"><br>
+    <input name="f10" placeholder="Feature 11"><br>
+    <input name="f11" placeholder="Feature 12"><br>
+    <input name="f12" placeholder="Feature 13"><br>
+    <input name="f13" placeholder="Feature 14"><br><br>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+{% if prediction %}
+<h3>Prediction: {{ prediction }}</h3>
+{% endif %}
+
+</body>
+</html>
