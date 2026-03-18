@@ -1,37 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>House Price Predictor</title>
+    <title>Car Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            margin: 40px auto;
+            width: 400px;
+            border-radius: 10px;
+        }
+        input, select {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
 
-<h2>Enter Features</h2>
+<h1>🚗 Car Price Prediction</h1>
 
 <form action="/predict" method="post">
 
-    <input name="f0" placeholder="Feature 1"><br>
-    <input name="f1" placeholder="Feature 2"><br>
-    <input name="f2" placeholder="Feature 3"><br>
-    <input name="f3" placeholder="Feature 4"><br>
-    <input name="f4" placeholder="Feature 5"><br>
-    <input name="f5" placeholder="Feature 6"><br>
-    <input name="f6" placeholder="Feature 7"><br>
-    <input name="f7" placeholder="Feature 8"><br>
-    <input name="f8" placeholder="Feature 9"><br>
-    <input name="f9" placeholder="Feature 10"><br>
-    <input name="f10" placeholder="Feature 11"><br>
-    <input name="f11" placeholder="Feature 12"><br>
-    <input name="f12" placeholder="Feature 13"><br>
-    <input name="f13" placeholder="Feature 14"><br><br>
+    <input type="text" name="model" placeholder="Model (e.g. i20)" required>
+    <input type="number" name="vehicle_age" placeholder="Vehicle Age" required>
+    <input type="number" name="km_driven" placeholder="KM Driven" required>
 
-    <button type="submit">Predict</button>
+    <select name="seller_type">
+        <option>Dealer</option>
+        <option>Individual</option>
+    </select>
+
+    <select name="fuel_type">
+        <option>Petrol</option>
+        <option>Diesel</option>
+        <option>CNG</option>
+    </select>
+
+    <select name="transmission_type">
+        <option>Manual</option>
+        <option>Automatic</option>
+    </select>
+
+    <input type="number" name="mileage" placeholder="Mileage" required>
+    <input type="number" name="engine" placeholder="Engine CC" required>
+    <input type="number" name="max_power" placeholder="Max Power" required>
+    <input type="number" name="seats" placeholder="Seats" required>
+
+    <button type="submit">Predict Price</button>
 
 </form>
 
-{% if prediction %}
-<h3>Prediction: {{ prediction }}</h3>
-{% endif %}
+<h2>{{ prediction_text }}</h2>
 
 </body>
 </html>
